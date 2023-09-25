@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="example suite 1" verbose="1" >
+  <test name="kolhs urgency GuestCheck" >
+    <classes>
+      <class name="kohls_urgency_Automation.ZCSE_2555_urgency_GuestCheck"/>
+     </classes>
+ </test>
+  <test name="Kolhs urgency Logged In Check" >
+    <classes>
+      <class name="kohls_urgency_Automation.ZCSE_2555_urgency_LoggedInCheck"/>
+      </classes>
+ </test>
+</suite>

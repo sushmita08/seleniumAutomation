@@ -1,0 +1,203 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<html>
+
+<head>
+  <LINK REL="SHORTCUT ICON" HREF="Z1logo.png">
+  <style>
+    .header img {
+      float: left;
+      width: 130px;
+      height: 130px;
+    }
+
+    .header h1 {
+      position: relative;
+      top: 25px;
+      left: 300px;
+    }
+    #required:after {
+    content:" *";
+    color: red;
+  }
+  </style>
+</head>
+
+<body style="width: 95%;margin: 5%;background: azure;">
+  <div class="header">
+    <img src="Z1logo.png" alt="logo" />
+    <h1 style=" font-size : 40px">CSE UseCase Automation <br /> <br /> <br /> <br /></h1>
+  </div>
+  <p>An Automation Portal to execute client side use cases</p>
+  <p>Automation will be executed based on below values selection and Portal will alert once execution is completed.</p>
+  <p>Clicking on OK button (of Alert Message), will redirect you to the automation execution report link.<br /> <br />
+    <br /> <br />
+  </p>
+  <p>
+    <label style="font-size : 20px">Select Client : </label>
+    <select id="clientselection" name="AutomationEnv" onchange='onenvchange()'>
+      <option value="select">Select</option>
+      <option value="kohls">Kohl's</option>
+      <option value="tbimwh">TBI</option>
+    </select>
+  </p>
+  <!--  --><p>
+    <div id = "kohlsusecases" style = "display: none">
+      <p>
+        <label  style = "font-size : 20px">Select Channel : </label>  
+        <select name= "channel" id="kohlschannel" onchange='onKohlschannelchange()'>
+          <option value= "select">Select</option>
+          <option value= "kohlsdesktop">Desktop</option>
+          <!--<option value= "kohlsmobile" >Mobile</option>-->
+        </select>
+      </p>
+
+      <label  style = "font-size : 20px">Select Use Case : </label>  
+      <select name= "Module" id="kohlsmodule" onchange='onkohlsusecasechange()'>
+        <option value= "select">Select</option>
+        <option value= "urgency" >PDP Urgency</option>
+        <!--<option value= "bopusrto" >Bopus RTO</option>
+        <option value= "scarcity" >PDP Scarcity</option>
+        <option value= "abcart" >Abandoned Cart</option>
+        <option value= "fsg" >Free Shipping Guage(FSG)</option>
+        <option value= "pricedrop" >Price Drop</option>-->
+      </select>
+    </div>
+  </p>
+  <p>
+    <div id="tbiusecases" style="display: none">
+      <p>
+        <label style="font-size : 20px">Select Channel : </label>
+        <select id="tbichannel" name="tbichannel" onchange='onchannelchange()'>
+          <option>Select</option>
+          <option value="tbidesktop">Desktop</option>
+          <!--<option value="mobile">Mobile</option>
+          <option value="tablet">Tablet</option>-->
+
+        </select>
+      </p>
+
+      <label style="font-size : 20px">Select Use Cases : </label>
+      <select id="tbimodule" name="tbimodule" onchange='onusecasechange()'>
+        <option>Select</option>
+        <option value="tbirto">RTO</option>
+      </select>
+
+      
+
+      
+    </div>
+  </p>
+  <button onclick='onrunclick()' id="runclick"
+    style="font-size : 20px ;font-weight: bold;height:40px;width:80px">RUN</button>
+  
+  <button id="resultclick" onclick='onresultclick()'
+    style="display: none;font-size : 20px ;font-weight: bold;height:40px;width:93px;margin-left: 3%;">RESULT</button>
+  
+
+  <div id="warning" style="font-size: 22px;color: red;width: fit-content;margin: inherit;display: none;">***Kindly do
+    not close OR reload the browser until the execution is complete, else automation process will be terminate.***</div>
+
+
+  <script type="text/javascript">
+    var env = "";
+    var channel = "";
+    var usecase = "";
+    
+    function onenvchange() {
+      let element = document.getElementById("clientselection");
+      env = element.options[element.selectedIndex].value;
+      
+    }
+
+    function onchannelchange() {
+      let element = document.getElementById("tbichannel");
+      channel = element.options[element.selectedIndex].value;
+    
+    }
+
+    function onusecasechange() {
+      let element = document.getElementById("tbimodule");
+      usecase = element.options[element.selectedIndex].value;
+  
+    }
+
+    function onKohlschannelchange() {
+      
+      let kelement = document.getElementById("kohlschannel");
+      channel = kelement.options[kelement.selectedIndex].value;
+    }
+    function onkohlsusecasechange() {
+      
+      let kelement = document.getElementById("kohlsmodule");
+      usecase = kelement.options[kelement.selectedIndex].value;
+    }
+
+
+
+    async function onrunclick() {
+      console.log(env, channel, usecase);
+      if (env == "tbimwh" && channel == "tbidesktop" && usecase == "tbirto") {
+        var min = 1;
+        alert("Kinldy Check the Automation Execution Results after " + min + " minutes, please click OK to proceed");
+        $("#warning").show();
+        var btn = document.getElementById('runclick');
+        btn.disabled = true;
+        setTimeout(() => {
+          $("#resultclick").show();
+          alert("Automation Execution is completed, Click OK and Click on RESULT button to view the report.");
+        }, min * 60 * 1000);
+        console.log("Timer set", min);
+        const response = await fetch('http://localhost:8000/');
+        const myJson = await response.json(); //extract JSON from the http response
+        console.log("myJson", myJson);
+      }
+      else if (env == "kohls" && channel == "kohlsdesktop" && usecase == "urgency") {
+        console.log(env, channel, usecase);
+      var min = 1;
+        alert("Kinldy Check the Automation Execution Results after " + min + " minutes, please click OK to proceed");
+        $("#warning").show();
+        var btn = document.getElementById('runclick');
+        btn.disabled = true;
+        setTimeout(() => {
+          $("#resultclick").show();
+          alert("Automation Execution is completed, Click OK and Click on RESULT button to view the report.");
+        }, min * 60 * 1000);
+        console.log("Timer set", min);
+        const response = await fetch('http://localhost:8000/kohls');
+        const myJson = await response.json(); //extract JSON from the http response
+        console.log("myJson", myJson);
+      }
+    }
+
+    function onresultclick() {
+    if (env == "kohls" && channel == "kohlsdesktop" && usecase == "urgency") {
+      window.location = "Reports/kolhsUrgencyReport.html";
+      }
+      if (env == "tbimwh" && channel == "tbidesktop" && usecase == "tbirto") {
+      window.location = "Reports/tbiRtoReport.html";
+      }
+    }
+
+    $(function () {
+      $("#clientselection").change(function () {
+        if ($(this).val() == "kohls") {
+          $("#kohlsusecases").show();
+        } else {
+          $("#kohlsusecases").hide();
+        }
+      });
+    });
+    $(function () {
+      $("#clientselection").change(function () {
+        if ($(this).val() == "tbimwh") {
+          $("#tbiusecases").show();
+        } else {
+          $("#tbiusecases").hide();
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

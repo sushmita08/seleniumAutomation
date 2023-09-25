@@ -1,0 +1,105 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.z1:webdriverTest:jar:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 63, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------------< com.z1:webdriverTest >------------------------
+[INFO] Building webdriverTest 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ webdriverTest ---
+[INFO] Deleting /Users/zineone/eclipse-workspace/z1-clientautomation/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ webdriverTest ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/zineone/eclipse-workspace/z1-clientautomation/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ webdriverTest ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ webdriverTest ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /Users/zineone/eclipse-workspace/z1-clientautomation/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ webdriverTest ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 7 source files to /Users/zineone/eclipse-workspace/z1-clientautomation/target/test-classes
+[WARNING] /Users/zineone/eclipse-workspace/z1-clientautomation/src/test/java/kohls_urgency_Automation/ZCSE_2555_urgency_GuestCheck.java: Some input files use or override a deprecated API.
+[WARNING] /Users/zineone/eclipse-workspace/z1-clientautomation/src/test/java/kohls_urgency_Automation/ZCSE_2555_urgency_GuestCheck.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ webdriverTest ---
+[INFO] Surefire report directory: /Users/zineone/eclipse-workspace/z1-clientautomation/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running TestSuite
+[TestNGContentHandler] [WARN] It is strongly recommended to add "<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >" at the top of your file, otherwise TestNG may fail or not work as expected.
+finaldate:null
+Local storage variable not found:0
+Local storage variable found
+Checking control grp
+Connect data:true
+urgency is displayed:
+In last 24 hrs -- people purchase 
+urgency is displayed:
+w>z1pu: console-api 2535:20 "[ZineOne-om] omniture rawData recd \"{\\\"tag\\\":\\\"omniture\\\",\\\"customerId\\\":\\\"fa2db09d-7c05-4479-8048-15a5f3d1f85a\\\",\\\"prop75\\\":\\\"w>z1pu|b|urgency_challenger|1\\\"}\""
+w>z1pu: console-api 228:16 "stru???..{\"tag\":\"omniture\",\"customerId\":\"fa2db09d-7c05-4479-8048-15a5f3d1f85a\",\"prop75\":\"w>z1pu|b|urgency_challenger|1\"}"
+Views in 15 mincheck -- Guest Check 
+urgency is displayed:
+w>z1pu: console-api 2535:20 "[ZineOne-om] omniture rawData recd \"{\\\"tag\\\":\\\"omniture\\\",\\\"customerId\\\":\\\"fa2db09d-7c05-4479-8048-15a5f3d1f85a\\\",\\\"prop75\\\":\\\"w>z1pu|c|urgency_challenger|2\\\"}\""
+w>z1pu: console-api 228:16 "stru???..{\"tag\":\"omniture\",\"customerId\":\"fa2db09d-7c05-4479-8048-15a5f3d1f85a\",\"prop75\":\"w>z1pu|c|urgency_challenger|2\"}"
+Views in 119 mincheck --guest check
+urgency is displayed:
+w>z1pu: console-api 2535:20 "[ZineOne-om] omniture rawData recd \"{\\\"tag\\\":\\\"omniture\\\",\\\"customerId\\\":\\\"fa2db09d-7c05-4479-8048-15a5f3d1f85a\\\",\\\"prop75\\\":\\\"w>z1pu|d|urgency_challenger|3\\\"}\""
+w>z1pu: console-api 228:16 "stru???..{\"tag\":\"omniture\",\"customerId\":\"fa2db09d-7c05-4479-8048-15a5f3d1f85a\",\"prop75\":\"w>z1pu|d|urgency_challenger|3\"}"
+Local storage variable not found:0
+Local storage variable found
+setup complete
+Now logging In
+Click on account 
+Click on sign in 
+Entering email id
+Entering password
+Click on login button
+Login successfullyAbc
+Checking control grp
+Connect data:true
+urgency is displayed:
+In last 24 hrs -- people purchase 
+urgency is displayed:
+w>z1pu: console-api 2535:20 "[ZineOne-om] omniture rawData recd \"{\\\"tag\\\":\\\"omniture\\\",\\\"customerId\\\":\\\"3000000027496002\\\",\\\"prop75\\\":\\\"w>z1pu|b|urgency_challenger|43\\\"}\""
+w>z1pu: console-api 228:16 "stru???..{\"tag\":\"omniture\",\"customerId\":\"3000000027496002\",\"prop75\":\"w>z1pu|b|urgency_challenger|43\"}"
+Views in 15 mincheck -- Known Check 
+urgency is displayed:
+w>z1pu: console-api 2535:20 "[ZineOne-om] omniture rawData recd \"{\\\"tag\\\":\\\"omniture\\\",\\\"customerId\\\":\\\"3000000027496002\\\",\\\"prop75\\\":\\\"w>z1pu|c|urgency_challenger|44\\\"}\""
+w>z1pu: console-api 228:16 "stru???..{\"tag\":\"omniture\",\"customerId\":\"3000000027496002\",\"prop75\":\"w>z1pu|c|urgency_challenger|44\"}"
+Views in 119 mincheck --known check
+urgency is displayed:
+w>z1pu: console-api 2535:20 "[ZineOne-om] omniture rawData recd \"{\\\"tag\\\":\\\"omniture\\\",\\\"customerId\\\":\\\"3000000027496002\\\",\\\"prop75\\\":\\\"w>z1pu|d|urgency_challenger|45\\\"}\""
+w>z1pu: console-api 228:16 "stru???..{\"tag\":\"omniture\",\"customerId\":\"3000000027496002\",\"prop75\":\"w>z1pu|d|urgency_challenger|45\"}"
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00000001074014e5, pid=48263, tid=775
+#
+# JRE version: OpenJDK Runtime Environment (11.0.1+13) (build 11.0.1+13)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.1+13, mixed mode, tiered, compressed oops, g1 gc, bsd-amd64)
+# Problematic frame:
+# V  [libjvm.dylib+0x6014e5]  SR_handler(int, __siginfo*, __darwin_ucontext*)+0x2e
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# An error report file with more information is saved as:
+# /Users/zineone/eclipse-workspace/z1-clientautomation/hs_err_pid48263.log
+[thread 39427 also had an error]
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
